@@ -4,6 +4,7 @@ import {  useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfi
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const navigate = useNavigate()
@@ -29,6 +30,7 @@ const SignUp = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email,data.password)
           await updateProfile({ displayName:data.name});
+          toast.success("Send Email Verification")
           reset()
       };
     return (
