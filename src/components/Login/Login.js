@@ -1,12 +1,24 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit,reset } = useForm();
-  
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+      let signInError;
+      if(error || gError){
+        signInError=<p className='text-red-500 py-3'>{error?.message || gError?.message}</p>
+    }
     const onSubmit = data => {
-        console.log(data);
+        signInWithEmailAndPassword(data.email,data.password)
         reset()
     };
     return (
@@ -53,11 +65,12 @@ const Login = () => {
                         {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
                         </div>
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login"/>
+                        {signInError}
+                        <input className='btn w-full max-w-xs text-white hover:bg-amber-500 border-0' type="submit" value="Login"/>
                     </form>
-                    <p><small>New to Doctors portal? <Link className='text-primary' to='/signup'>Create New Account</Link></small></p>
+                    <p><small>New to Techparts? <Link className='text-amber-500' to='/signup'>Create New Account</Link></small></p>
                     <div className="divider">OR</div>
-                    <button className="btn btn-outline">Continue with Google</button>
+                    <button  onClick={() => signInWithGoogle()} className="btn btn-outline hover:bg-primary hover:border-0 hover:text-white">Continue with Google</button>
                 </div>
             </div>
         </div>

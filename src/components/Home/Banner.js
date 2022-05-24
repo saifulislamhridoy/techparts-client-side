@@ -37,7 +37,7 @@ const Banner = () => {
                             <h4 className="text-white text-xl font-serif md:text-3xl font-bold mb-4">NEW TECHNOLOGY & BUILD</h4>
                             <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">WHEELS & TIRES</h1>
                             <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">COLLECTIONS</h1>
-                            <button className="btn bg-white text-black mb-4 hover:bg-red-600 hover:text-white uppercase">SHOP NOW</button>
+                            <button className="btn bg-white text-black mb-4 hover:bg-amber-500 hover:text-white uppercase">SHOP NOW</button>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -47,7 +47,7 @@ const Banner = () => {
                             <h4 className="text-white text-xl md:text-5xl font-bold mb-4 uppercase">We are manufacturing</h4>
                             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 uppercase">product with world</h1>
                             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 uppercase">class quality</h1>
-                            <button className="btn bg-white text-black mb-4 hover:bg-red-600 hover:text-white uppercase">SHOP NOW</button>
+                            <button className="btn bg-white text-black mb-4 hover:bg-primary hover:text-white uppercase">SHOP NOW</button>
                         </div>
                     </div>
                 </SwiperSlide>
