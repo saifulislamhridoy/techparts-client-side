@@ -73,7 +73,7 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text">Minimum Quantity</span>
                             </label>
-                            <input type="number" placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs" {...register("minimunQuantity")} required/>
+                            <input type="number" placeholder="Minimum Quantity" className="input input-bordered w-full max-w-xs" {...register("minimumQuantity")} required/>
                         </div>
                         <div className='form-control w-full max-w-xs'>
                             <label className="label">

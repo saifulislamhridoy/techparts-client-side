@@ -32,7 +32,7 @@ const Banner = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className="h-screen w-full flex items-center" style={{ background: `url(${banner1})` }}>
+                    <div className="h-[500px] md:h-screen w-full flex items-center" style={{ background: `url(${banner1})` }}>
                         <div className="ml-8 md:ml-12">
                             <h4 className="text-white text-xl font-serif md:text-3xl font-bold mb-4">NEW TECHNOLOGY & BUILD</h4>
                             <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">WHEELS & TIRES</h1>
@@ -42,7 +42,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="h-screen w-full flex items-center" style={{ background: `url(${banner2})` }}>
+                <div className="h-[500px] md:h-screen w-full flex items-center" style={{ background: `url(${banner2})` }}>
                         <div className="ml-8 md:ml-12">
                             <h4 className="text-white text-xl md:text-5xl font-bold mb-4 uppercase">We are manufacturing</h4>
                             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 uppercase">product with world</h1>

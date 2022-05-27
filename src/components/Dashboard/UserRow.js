@@ -8,6 +8,7 @@ const UserRow = ({ user,index ,refetch}) => {
         fetch(url,{
             method:'PUT',
             headers:{
+                'content-type':'application/json',
                 authorization:`Bearer ${localStorage.getItem('accessToken')}`
             }
         })
