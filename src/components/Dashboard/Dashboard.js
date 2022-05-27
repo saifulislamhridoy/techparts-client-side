@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -6,8 +6,13 @@ import { MdOutlineReviews } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
 import { GrAddCircle} from 'react-icons/gr';
 import { SiGoogletagmanager} from 'react-icons/si';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Dashboard = () => {
+  const [user]=useAuthState(auth)
+  const [admin]=useAdmin(user)
     return (
         <div className="drawer drawer-mobile">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -22,9 +27,9 @@ const Dashboard = () => {
       <li><Link className='flex items-center' to='/dashboard/order'><CgProfile></CgProfile> My Profile</Link></li>
       <li><Link className='flex items-center' to='/dashboard/profile'><AiOutlineShoppingCart></AiOutlineShoppingCart> My Order</Link></li>
       <li><Link className='flex items-center' to='/dashboard/review'><MdOutlineReviews></MdOutlineReviews>Add Review</Link></li>
-      <li><Link className='flex items-center' to='/dashboard/allUser'><FaUsers></FaUsers>All Users</Link></li>
-      <li><Link className='flex items-center' to='/dashboard/addpd'><GrAddCircle></GrAddCircle>Add Product</Link></li>
-      <li><Link className='flex items-center' to='/dashboard/manageOrder'><SiGoogletagmanager></SiGoogletagmanager>Manage All Orders</Link></li>
+     {admin && <li><Link className='flex items-center' to='/dashboard/allUser'><FaUsers></FaUsers>All Users</Link></li>}
+     {admin && <li><Link className='flex items-center' to='/dashboard/addpd'><GrAddCircle></GrAddCircle>Add Product</Link></li>}
+     { admin && <li><Link className='flex items-center' to='/dashboard/manageOrder'><SiGoogletagmanager></SiGoogletagmanager>Manage All Orders</Link></li>}
     </ul>
   
   </div>

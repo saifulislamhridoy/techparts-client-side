@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const navigate = useNavigate()
@@ -17,11 +18,12 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
       const [updateProfile, updating, uError] = useUpdateProfile(auth);
+      const [token]=useToken(user || gUser)
       useEffect(()=>{
-        if(user || gUser){
+        if(token){
             navigate('/');
            }
-    },[user,gUser,navigate])
+    },[token,navigate])
       let signUpError;
       if(error || gError || uError){
           signUpError=<p className='text-red-500 py-3'>{error?.message || gError?.message || uError?.message}</p>
