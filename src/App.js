@@ -11,6 +11,7 @@ import RequireAuth from './components/Login/RequireAuth';
 import AddProduct from './components/Dashboard/AddProduct';
 import AllUsers from './components/Dashboard/AllUsers';
 import RequireAdmin from './components/Login/RequireAdmin';
+import Footer from './components/Shared/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='allUser' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
         </Route>
       </Routes>
+      <Footer></Footer>
     <ToastContainer></ToastContainer>
     </div>
   );
