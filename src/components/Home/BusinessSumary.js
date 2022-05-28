@@ -36,7 +36,7 @@ const BusinessSumary = () => {
                 </div>
                 <div class="stat">
                 <div class="stat-figure text-secondary">
-                        <div class="avatar online">
+                        <div class="avatar">
                             <div class="w-[70px]">
                               <img src={team} alt="" />
                             </div>

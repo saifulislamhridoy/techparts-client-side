@@ -16,9 +16,6 @@ const PurchaseModal = ({ setPurchase, purchase,refetch }) => {
     else if (availableQuantity < parseInt(quantityValue)) {
         qError = `Maximum order ${availableQuantity} unit`
     }
-    else if(availableQuantity < minimumQuantity){
-        qError=`Product coming soon...`
-    }
     else {
         qError = ''
     }
