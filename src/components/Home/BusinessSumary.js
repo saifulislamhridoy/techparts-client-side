@@ -11,7 +11,7 @@ const BusinessSumary = () => {
             <div class="stats shadow w-full h-[160px]">
                 <div class="stat">
                 <div class="stat-figure text-secondary">
-                        <div class="avatar online">
+                        <div class="avatar">
                             <div class="w-[70px] rounded-full">
                               <img src={countries} alt="" />
                             </div>

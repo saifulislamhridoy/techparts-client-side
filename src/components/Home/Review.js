@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+import user from '../../images/icons/user.png'
 
 const Review = () => {
     const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/review').then(res => res.json()))
@@ -19,7 +20,7 @@ const Review = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className=''>
             <h2 className='text-center text-2xl font-bold text-primary uppercase py-6'>Customers Reviews</h2>
             <Swiper
                 slidesPerView={1}
@@ -46,11 +47,14 @@ const Review = () => {
             >
                 {
                     reviews.map(review => <SwiperSlide key={review._id}>
-                        <div class="card w-full bg-base-100 shadow-xl mr-6">
+                        <div class="card w-full bg-base-100 shadow-xl mr-6 mb-8">
                             <div class="h-[250px] p-5">
+                                <div className='flex justify-center'>
+                                    <img className='w-[50px]' src={user} alt="" />
+                                </div>
                                 <h2 class="card-title">{review.name}</h2>
-                               <p>{review.comment}</p>
-                               <p className='flex items-center mt-2'>Rating: {[...Array(review.rating)].map(star =><FaStar className='text-yellow-300 h-[20px] w-[30px] ml-2'></FaStar>)}</p>
+                                <p>{review.comment}</p>
+                                <p className='flex items-center mt-2'>Rating: {[...Array(review.rating)].map(star => <FaStar className='text-yellow-300 h-[20px] w-[30px] ml-2'></FaStar>)} </p>
                             </div>
                         </div>
 
