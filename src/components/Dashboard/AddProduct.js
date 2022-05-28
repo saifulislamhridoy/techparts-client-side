@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
+
 
 const AddProduct = () => {
     const { register, handleSubmit,reset } = useForm();
@@ -35,11 +36,19 @@ const AddProduct = () => {
                 .then(res => res.json())
                 .then(data => {
                     if(data.insertedId){
-                        toast.success('Successfully added product')
+                        Swal.fire({
+                            title: 'Successfully added product!',
+                            icon: 'success',
+                            confirmButtonText: 'ok'
+                          })
                         reset()
                     }
                     else{
-                        toast.error('Faild to added product')
+                        Swal.fire({
+                            title: 'Faild to add product!',
+                            icon: 'error',
+                            confirmButtonText: 'ok'
+                          })
                     }
                 })
             }
