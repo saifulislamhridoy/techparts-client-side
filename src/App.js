@@ -15,6 +15,7 @@ import Footer from './components/Shared/Footer';
 import AddReview from './components/Dashboard/AddReview';
 import NotFound from './components/Shared/NotFound';
 import Profile from './components/Dashboard/Profile';
+import MyOrder from './components/Dashboard/MyOrder';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path='addpd' element={<AddProduct></AddProduct>}></Route>
           <Route path='allUser' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+          <Route path='myOrder' element={<MyOrder></MyOrder>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route index  element={<Profile></Profile>}></Route>
         </Route>

@@ -22,18 +22,19 @@ const PurchaseModal = ({ setPurchase, purchase,refetch }) => {
     const handleSubmit = e => {
         e.preventDefault()
         const email = e.target.email.value
-        const name = e.target.name.value
+        const userName = e.target.name.value
         const address = e.target.address.value
         const phone = e.target.phone.value
         const quantity = e.target.quantity.value
         const data = {
             email: email,
-            name: name,
+            name: userName,
             address: address,
             phone: phone,
             quantity: quantity,
             img: img,
-            price: price
+            price: price,
+            pdName:name
         }
         fetch('http://localhost:5000/order', {
             method: 'POST',
