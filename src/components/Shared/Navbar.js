@@ -21,6 +21,7 @@ const Navbar = () => {
                     <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 uppercase">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/blogs'>Blogs</Link></li>
+                        <li><Link to='/portfolio'>My Portfolio</Link></li>
                        {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
                         {user? <li><Link onClick={handleLogOut} to='/login'>LogOut</Link></li> : <li><Link to='/login'>Login</Link></li>}
                     </ul>
@@ -31,6 +32,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal uppercase font-bold p-0">
                     <li className='hover:text-amber-500'><Link to='/'>Home</Link></li>
                     <li className='hover:text-amber-500'><Link to='/blogs'>Blogs</Link></li>
+                    <li  className='hover:text-amber-500'><Link to='/portfolio'>My Portfolio</Link></li>
                     {user && <li className='hover:text-amber-500'><Link to='/dashboard'>Dashboard</Link></li>}
                     {user? <li className='hover:text-amber-500'><Link onClick={handleLogOut} to='/login'>LogOut</Link></li> : <li className='hover:text-amber-500'><Link to='/login'>Login</Link></li>}
                 </ul>

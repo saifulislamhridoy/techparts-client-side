@@ -16,6 +16,7 @@ import AddReview from './components/Dashboard/AddReview';
 import NotFound from './components/Shared/NotFound';
 import Profile from './components/Dashboard/Profile';
 import MyOrder from './components/Dashboard/MyOrder';
+import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path='addpd' element={<AddProduct></AddProduct>}></Route>
           <Route path='allUser' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
