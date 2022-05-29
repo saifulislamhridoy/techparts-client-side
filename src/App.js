@@ -19,6 +19,7 @@ import MyOrder from './components/Dashboard/MyOrder';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 import ManageAllOrders from './components/Dashboard/ManageAllOrders';
 import Blogs from './components/Blogs/Blogs';
+import ManageProduct from './components/Dashboard/ManageProduct';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path='addpd' element={<AddProduct></AddProduct>}></Route>
           <Route path='allUser' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+          <Route path='manageProduct' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
           <Route path='manageOrder' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           <Route path='myOrder' element={<MyOrder></MyOrder>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>

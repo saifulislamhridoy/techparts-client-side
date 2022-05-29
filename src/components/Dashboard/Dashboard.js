@@ -29,6 +29,7 @@ const Dashboard = () => {
      {admin && <li><Link className='flex items-center' to='/dashboard/allUser'><FaUsers></FaUsers>All Users</Link></li>}
      {admin && <li><Link className='flex items-center' to='/dashboard/addpd'><GrAddCircle></GrAddCircle>Add Product</Link></li>}
      { admin && <li><Link className='flex items-center' to='/dashboard/manageOrder'><SiGoogletagmanager></SiGoogletagmanager>Manage All Orders</Link></li>}
+     { admin && <li><Link className='flex items-center' to='/dashboard/manageProduct'><SiGoogletagmanager></SiGoogletagmanager>Manage Product</Link></li>}
     </ul>
   
   </div>
