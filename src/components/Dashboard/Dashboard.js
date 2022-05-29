@@ -23,9 +23,9 @@ const Dashboard = () => {
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
     <ul className="menu p-4 overflow-y-auto w-70 bg-base-100 text-base-content">
-      <li><Link className='flex items-center' to='/dashboard/order'><CgProfile></CgProfile> My Profile</Link></li>
-      <li><Link className='flex items-center' to='/dashboard/profile'><AiOutlineShoppingCart></AiOutlineShoppingCart> My Order</Link></li>
-      <li><Link className='flex items-center' to='/dashboard/review'><MdOutlineReviews></MdOutlineReviews>Add Review</Link></li>
+      <li><Link className='flex items-center' to='/dashboard'><CgProfile></CgProfile> My Profile</Link></li>
+      {!admin && <li><Link className='flex items-center' to='/dashboard/order'><AiOutlineShoppingCart></AiOutlineShoppingCart> My Order</Link></li>}
+     {!admin && <li><Link className='flex items-center' to='/dashboard/review'><MdOutlineReviews></MdOutlineReviews>Add Review</Link></li>}
      {admin && <li><Link className='flex items-center' to='/dashboard/allUser'><FaUsers></FaUsers>All Users</Link></li>}
      {admin && <li><Link className='flex items-center' to='/dashboard/addpd'><GrAddCircle></GrAddCircle>Add Product</Link></li>}
      { admin && <li><Link className='flex items-center' to='/dashboard/manageOrder'><SiGoogletagmanager></SiGoogletagmanager>Manage All Orders</Link></li>}

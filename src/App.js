@@ -14,6 +14,7 @@ import RequireAdmin from './components/Login/RequireAdmin';
 import Footer from './components/Shared/Footer';
 import AddReview from './components/Dashboard/AddReview';
 import NotFound from './components/Shared/NotFound';
+import Profile from './components/Dashboard/Profile';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='addpd' element={<AddProduct></AddProduct>}></Route>
           <Route path='allUser' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
+          <Route index  element={<Profile></Profile>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
