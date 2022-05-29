@@ -17,6 +17,8 @@ import NotFound from './components/Shared/NotFound';
 import Profile from './components/Dashboard/Profile';
 import MyOrder from './components/Dashboard/MyOrder';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
+import ManageAllOrders from './components/Dashboard/ManageAllOrders';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   return (
@@ -26,10 +28,12 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route path='addpd' element={<AddProduct></AddProduct>}></Route>
           <Route path='allUser' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+          <Route path='manageOrder' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           <Route path='myOrder' element={<MyOrder></MyOrder>}></Route>
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route index  element={<Profile></Profile>}></Route>
