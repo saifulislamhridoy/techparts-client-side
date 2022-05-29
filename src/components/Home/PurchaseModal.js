@@ -36,7 +36,7 @@ const PurchaseModal = ({ setPurchase, purchase,refetch }) => {
             price: price,
             pdName:name
         }
-        fetch('http://localhost:5000/order', {
+        fetch('https://mysterious-atoll-84227.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -54,7 +54,7 @@ const PurchaseModal = ({ setPurchase, purchase,refetch }) => {
                     e.target.reset()
 
                     // update quantity
-                    fetch(`http://localhost:5000/order/${_id}`,{
+                    fetch(`https://mysterious-atoll-84227.herokuapp.com/order/${_id}`,{
                         method:'PUT',
                         headers:{
                             'content-type':'application/json'

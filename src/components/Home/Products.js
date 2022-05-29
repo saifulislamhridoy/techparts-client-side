@@ -7,7 +7,7 @@ import RequireAuth from '../Login/RequireAuth'
 
 const Products = () => {
     const [purchase,setPurchase]=useState(null)
-    const {data:products,isLoading,refetch}=useQuery('products',()=>fetch('http://localhost:5000/product',{
+    const {data:products,isLoading,refetch}=useQuery('products',()=>fetch('https://mysterious-atoll-84227.herokuapp.com/product',{
         method:'GET',
         headers:{
             'content-type':'application/json',

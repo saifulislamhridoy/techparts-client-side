@@ -17,7 +17,7 @@ const AddReview = () => {
             comment:comment,
             rating:rating
         }
-        const url = `http://localhost:5000/review/${email}`
+        const url = `https://mysterious-atoll-84227.herokuapp.com/review/${email}`
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -6,7 +6,7 @@ const ManageOrderTable = ({manageOrder}) => {
     const handleDelete = (id)=>{
         const sure = window.confirm('are you sure')
         if(sure){
-            fetch(`http://localhost:5000/pd/${id}`,{
+            fetch(`https://mysterious-atoll-84227.herokuapp.com/pd/${id}`,{
                 method:"DELETE"
             })
             .then(res=>res.json())

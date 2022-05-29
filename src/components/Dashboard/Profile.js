@@ -10,7 +10,7 @@ const Profile = () => {
     const [user]=useAuthState(auth)
     const email = user?.email
     const { register, handleSubmit,reset } = useForm();
-    const {data:profile,isLoading ,refetch}=useQuery(['profile', user],()=>fetch(`http://localhost:5000/profile/${email}`).then(res=>res.json()))
+    const {data:profile,isLoading ,refetch}=useQuery(['profile', user],()=>fetch(`https://mysterious-atoll-84227.herokuapp.com/profile/${email}`).then(res=>res.json()))
     if(isLoading){
         return <Loading></Loading>
     }
@@ -24,7 +24,7 @@ const Profile = () => {
             phone:data.phone
         }
        if(email){
-        const url = `http://localhost:5000/profile/${email}`
+        const url = `https://mysterious-atoll-84227.herokuapp.com/profile/${email}`
         fetch(url, {
             method: 'PUT',
             headers: {

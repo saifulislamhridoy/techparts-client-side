@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import ManageOrderTable from './ManageOrderTable';
 
 const ManageAllOrders = () => {
-  const { data: manageAllOrders, isLoading, refetch } = useQuery('manageAllOrders', () => fetch(`http://localhost:5000/manageAllOrder`).then(res => res.json()))
+  const { data: manageAllOrders, isLoading, refetch } = useQuery('manageAllOrders', () => fetch(`https://mysterious-atoll-84227.herokuapp.com/manageAllOrder`).then(res => res.json()))
   if (isLoading) {
     return <Loading></Loading>
   }

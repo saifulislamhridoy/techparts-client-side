@@ -15,7 +15,7 @@ import { Pagination } from "swiper";
 import user from '../../images/icons/user.png'
 
 const Review = () => {
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('http://localhost:5000/review').then(res => res.json()))
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://mysterious-atoll-84227.herokuapp.com/review').then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }

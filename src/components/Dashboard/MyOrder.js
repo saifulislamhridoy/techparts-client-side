@@ -8,7 +8,7 @@ import MyOrderTable from './MyOrderTable';
 const MyOrder = () => {
     const [user]=useAuthState(auth)
     const email = user?.email
-    const {data:myOrders,isLoading,refetch}=useQuery(['myOrders',user],()=>fetch(`http://localhost:5000/myOrder/${email}`).then(res=>res.json()))
+    const {data:myOrders,isLoading,refetch}=useQuery(['myOrders',user],()=>fetch(`https://mysterious-atoll-84227.herokuapp.com/myOrder/${email}`).then(res=>res.json()))
     if(isLoading){
         return <Loading></Loading>
     }

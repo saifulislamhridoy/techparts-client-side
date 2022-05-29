@@ -26,7 +26,7 @@ const AddProduct = () => {
                     description:data.description,
                     img:result.data.url
                 }
-                fetch('http://localhost:5000/product',{
+                fetch('https://mysterious-atoll-84227.herokuapp.com/product',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'
