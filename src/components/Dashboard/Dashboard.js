@@ -19,7 +19,6 @@ const Dashboard = () => {
   <div className="drawer-content flex flex-col bg-gray-100">
    <h2 className='text-xl md:text-4xl font-bold flex justify-center my-4 text-sky-500 uppercase'>Welcome To Your Dashboard</h2>
    <Outlet></Outlet>
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
