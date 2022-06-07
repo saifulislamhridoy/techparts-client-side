@@ -1,6 +1,6 @@
 # Techparts
-Live site:
- live site: https://techparts-bc2f4.web.app/
+
+ Live site: https://techparts-bc2f4.web.app/
  
  About This project:
  * This is a Manufacturing base project.
